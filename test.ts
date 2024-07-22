@@ -6,7 +6,7 @@ import {
   describe,
   it
 } from "@std/testing/bdd";
-import { html, escapeDangerousMarkup } from "./html.ts";
+import { html, escapeDangerousMarkup } from "./mod.ts";
 
 describe('html function test', () => {
   it('dynamic safe string value is set', () => {
