@@ -21,5 +21,5 @@ export function html(
 ): string {
   const stringified = dynamicParts.map(String);
 
-  return String.raw( { raw: staticParts }, ...stringified);
+  return String.raw({ raw: staticParts }, ...stringified);
 }
