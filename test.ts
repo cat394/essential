@@ -48,7 +48,7 @@ describe("html function test", () => {
     );
   });
 
-  it("empty dynamic value is set", () => {
+  it("empty string value is set", () => {
     const value = "";
 
     const test = html`<h1>${value}</h1>`;
@@ -56,7 +56,7 @@ describe("html function test", () => {
     assertEquals(test, "<h1></h1>");
   });
 
-  it("multiple dynamic values are set", () => {
+  it("multiple values are set", () => {
     const value1 = "Hello";
     const value2 = "<world>";
 
@@ -65,7 +65,7 @@ describe("html function test", () => {
     assertEquals(test, "<h1>Hello, <world>!</h1>");
   });
 
-  it("null dynamic value is set", () => {
+  it("null value is set", () => {
     const value = null;
 
     const test = html`<h1>${value}</h1>`;
@@ -73,7 +73,7 @@ describe("html function test", () => {
     assertEquals(test, "<h1>null</h1>");
   });
 
-  it("undefined dynamic value is set", () => {
+  it("undefined value is set", () => {
     const value = undefined;
 
     const test = html`<h1>${value}</h1>`;

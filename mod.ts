@@ -19,8 +19,7 @@ export function html(
   staticParts: readonly string[],
   ...dynamicParts: unknown[]
 ): string {
-  return staticParts.reduce((acc, part, i) => {
-    const dynamicPart = dynamicParts[i - 1];
-    return acc + (dynamicPart !== undefined ? String(dynamicPart) : "") + part;
-  });
+  const stringified = dynamicParts.map(String);
+
+  return String.raw( { raw: staticParts }, ...stringified);
 }
