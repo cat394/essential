@@ -42,6 +42,10 @@ const list = html`<ul>${names.map((name) => html`<li>${name}</li>`)}</ul>`;
 // => "<ul><li>Alice</li><li>Bob</li><li>Cameron</li></ul>"
 
 const anyValueItems = [false, undefined, { key: "value" }, () => ""];
+
+const list = html`<ul>${
+  anyValueItems.map((item) => html`<li>${item}</li>`)
+}</ul>`;
 // => "<ul><li>false</li><li>undefined</li><li>[object Object]</li><li>()=>''</li></ul>"
 ```
 
