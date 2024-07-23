@@ -96,7 +96,7 @@ describe("html function test", () => {
 
     assertEquals(
       test,
-      "<ul><li>1</li><li>false</li><li>undefined</li><li>[object Object]</li><li>()=>''</li></ul>",
+      `<ul><li>1</li><li>false</li><li>undefined</li><li>[object Object]</li><li>()=>""</li></ul>`,
     );
   });
 });
