@@ -30,6 +30,21 @@ primaryBtn(escapeDangerousMarkup('<script src="inject.js"></script>')); // 👍X
 // => <button class="primary">&lt;script src=&quot;inject.js&quot;&gt;&lt;/script&gt;</button>
 ```
 
+## Exception
+
+Starting with _version 3_, if the dynamic values ​​passed to the html function are
+arrays, we will combine them.
+
+```ts
+const names = ["Alice", "Bob", "Cameron"];
+
+const list = html`<ul>${names.map((name) => html`<li>${name}</li>`)}</ul>`;
+// => "<ul><li>Alice</li><li>Bob</li><li>Cameron</li></ul>"
+
+const anyValueItems = [false, undefined, { key: "value" }, () => ""];
+// => "<ul><li>false</li><li>undefined</li><li>[object Object]</li><li>()=>''</li></ul>"
+```
+
 ## Licence
 
 MIT
