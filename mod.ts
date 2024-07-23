@@ -1,4 +1,4 @@
-import { escape } from '@std/html';
+import { escape } from "@std/html";
 
 /**
  * Escapes dangerous markup to prevent XSS attacks.
@@ -6,7 +6,7 @@ import { escape } from '@std/html';
  * @returns {string} - The escaped markup.
  */
 export function escapeDangerousMarkup(markup: unknown): string {
-	return escape(String(markup));
+  return escape(String(markup));
 }
 
 /**
@@ -16,12 +16,12 @@ export function escapeDangerousMarkup(markup: unknown): string {
  * @returns {string} - The combined string with dynamic values included.
  */
 export function html(
-	staticParts: readonly string[],
-	...dynamicParts: unknown[]
+  staticParts: readonly string[],
+  ...dynamicParts: unknown[]
 ): string {
-	const stringified = dynamicParts.map((part) => {
-		return Array.isArray(part) ? part.map(String).join('') : String(part);
-	});
+  const stringified = dynamicParts.map((part) => {
+    return Array.isArray(part) ? part.map(String).join("") : String(part);
+  });
 
-	return String.raw({ raw: staticParts }, ...stringified);
+  return String.raw({ raw: staticParts }, ...stringified);
 }
