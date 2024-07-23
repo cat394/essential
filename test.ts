@@ -80,4 +80,20 @@ describe("html function test", () => {
 
     assertEquals(test, "<h1>undefined</h1>");
   });
+
+  it('the dynamically inserted values​ are an array of strings, they are concatenated', () => {
+    const list = ['Alice', 'Bob', 'Cameron'];
+
+    const test = html`<ul>${list.map(item => html`<li>${item}</li>`)}</ul>`;
+
+    assertEquals(test, '<ul><li>Alice</li><li>Bob</li><li>Cameron</li></ul>')
+  });
+
+  it("the elements of the array are not strings, all elements are forcibly converted to strings and then each element is concatenated", () => {
+    const list = [1, false, undefined, { key: 'value' }, () => ''];
+
+    const test = html`<ul>${list.map(item => html`<li>${item}</li>`)}</ul>`
+
+    assertEquals(test, "<ul><li>1</li><li>false</li><li>undefined</li><li>[object Object]</li><li>()=>''</li></ul>")
+  })
 });
