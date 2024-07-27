@@ -1,5 +1,7 @@
 # HTML Template Tag Function
 
+> This package will now be maintained as a new package called [@kokomi/lamp](https://jsr.io/@kokomi/lamp@1.0.0). If you use this package in the future, please use that package.
+
 This function uses JavaScript tag functions to insert dynamic JavaScript values
 into HTML markup.
 
